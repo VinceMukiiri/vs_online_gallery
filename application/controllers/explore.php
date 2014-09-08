@@ -1,6 +1,6 @@
 <?php
 
-class Homepage extends CI_Controller {
+class Explore extends CI_Controller {
 
     function index() {
         $elements = array(
@@ -9,5 +9,9 @@ class Homepage extends CI_Controller {
             'user' => 'user',
         );
         $this->load->view('includes/template', $elements);
+    }
+    
+    function most_recent() {
+        
     }
 }

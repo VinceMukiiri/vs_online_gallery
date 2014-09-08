@@ -1,11 +1,11 @@
 <div class="panel panel-default" id="login_form">
-    
+
     <div class="panel-heading">
-        <h1 class="panel-title">Login</h1>
+        <h1 class="panel-title">Admin Login</h1>
     </div>
-    
+
     <div class="panel-body">
-        
+
         <?php
         echo form_open("login/validate_credentials", array(
             'role' => 'form',
@@ -14,23 +14,24 @@
         ?>
         <div class="form-group">
             <?php
-            echo form_label('Email: ', 'email', array(
+            echo form_label('Username: ', 'username', array(
                 'class' => 'col-sm-2 control-label'
             ));
             ?>
             <div class="col-sm-10">
-                <?php //email input
+                <?php
+                //username input
                 echo form_input(array(
                     'class' => 'form-control',
                     'type' => 'text',
-                    'name' => 'email',
-                    'id' => 'email',
-                    'placeholder' => 'Email',
+                    'name' => 'username',
+                    'id' => 'username',
+                    'placeholder' => 'Username',
                 ));
                 ?>
             </div>
         </div><!-- email -->
-        
+
         <div class="form-group">
             <?php
             echo form_label('Password: ', 'password', array(
@@ -39,10 +40,11 @@
             ?>
             <div class="col-sm-10">
                 <?php
+                //password input
                 echo form_password(array(
                     'name' => 'password',
                     'id' => 'password',
-                    'placeholder' => 'password',
+                    'placeholder' => 'Password',
                     'class' => 'col-sm-10 form-control'
                 ));
                 ?>
@@ -60,11 +62,21 @@
                     'content' => 'Login',
                 ));
                 ?>
+                <a href="login/registration" class="btn bg-info">Sign Up</a>
             </div>
+            
         </div><!-- login button -->
         <?php echo form_close(); ?><!--end form-->
+        
+
+        <?php
+        if (isset($errmessage)) {
+            echo '<div class="alert alert-danger">' . $errmessage . '</div>';
+        }
+        ?>
     </div><!--end panel body-->
 </div><!--end panel-->
+
 
 
 
