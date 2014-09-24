@@ -64,10 +64,10 @@
                 ?>
                 <a href="login/registration" class="btn bg-info">Sign Up</a>
             </div>
-            
+
         </div><!-- login button -->
         <?php echo form_close(); ?><!--end form-->
-        
+
 
         <?php
         if (isset($errmessage)) {
