@@ -1,1 +1,9 @@
 #login_form{width:35em;margin:50px auto 0}.member .fa{display:none}.member:hover .fa{color:#B0BECC;display:block}.member:hover .fa:hover{color:gray;cursor:pointer}
+
+a.thumbnail {
+    text-decoration: none;
+}
+
+.container.fullpage {
+    min-height: 768px;
+}

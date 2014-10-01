@@ -3,40 +3,57 @@ $headerelements = array(
     'title' => $title . " - Online Learning",
 );
 $this->load->view('includes/header', $headerelements);
+
+if ($this->session->userdata('logged_in')) {
+    $user = 'logged_in';
+} elseif ($main_content == "login_view" || $main_content == "registration_view") {
+    $user = 'logging_in';
+} else {
+    $user = 'visitor';
+}
 ?>
-<div id='main_content'></div>
+
+
+
+
 
 <?php
+//Top Navbar inclusion
+//TODO include top navbar and sidebar separately
+
 switch ($user) {
     case 'visitor':
-        $this->load->view('includes/navbar');
+        redirect('/login');
         break;
 
-    case 'user':
-        $this->load->view('includes/user_navbar');
-        break;
+    case 'logged_in' :
+        echo '<div id="wrapper">';
+        echo "<nav class=\"navbar navbar-inverse navbar-fixed-top\" role=\"navigation\">";
+        $this->load->view('includes/top_navbar');
+        $this->load->view('includes/sidebar_nav');
+        echo "</nav >";
 
-    default :
-        echo 'No User has been specified';
+        echo '<div id="page-wrapper">';
+        FB::log($main_content, 'The main content is');
+        if (isset($data)) {
+            $this->load->view($main_content, $data);
+        } else {
+            $this->load->view($main_content);
+        }
+
+        echo '</div></div>';
         break;
-}
-FB::log($main_content, 'The main content is');
-if (isset($data)) {
-    $this->load->view($main_content, $data);
-} else {
-    $this->load->view($main_content);
+    case 'logging_in' :
+        FB::log($main_content, 'The main content is');
+        if (isset($data)) {
+            $this->load->view($main_content, $data);
+        } else {
+            $this->load->view($main_content);
+        }
+
+        break;
 }
 ?>
-
-
-<!-- comment 
-<script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript" ></script>
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js" type="text/javascript"></script>
-<script src="<?php //echo base_url()   ?>js/myscript.min.js" type="text/javascript" ></script>
--->
-
-<script src="<?php echo base_url(); ?>_/js/bootstrap.js" type="text/javascript"></script>
-<script src="<?php echo base_url(); ?>_/js/myscripts.js"></script>
 
 <?php
 $this->load->view('includes/footer');

@@ -1,3 +1,4 @@
+<div class="container-fluid">
 <div class="panel panel-default" id="login_form">
 
     <div class="panel-heading">
@@ -76,6 +77,8 @@
         ?>
     </div><!--end panel body-->
 </div><!--end panel-->
+
+</div><!-- end container -->
 
 
 

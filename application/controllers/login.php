@@ -26,16 +26,21 @@ class Login extends CI_Controller {
      * login page
      */
     function index() {
-        $this->elements['main_content'] = 'login_view';
-        $this->elements['title'] = 'User';
+        if ($this->session->userdata('logged_in')) {
 
-        if (isset($this->err)) {
-            if ($this->err) {
-                $message = 'Wrong username & password combination!';
-                $this->elements['data']['errmessage'] = $message;
+            redirect('/homepage');
+        } else {
+            $this->elements['main_content'] = 'login_view';
+            $this->elements['title'] = 'User';
+
+            if (isset($this->err)) {
+                if ($this->err) {
+                    $message = 'Wrong username & password combination!';
+                    $this->elements['data']['errmessage'] = $message;
+                }
             }
+            $this->load->view('includes/template', $this->elements);
         }
-        $this->load->view('includes/template', $this->elements);
     }
 
     /**
@@ -95,6 +100,11 @@ class Login extends CI_Controller {
 
         $this->elements['main_content'] = 'registration_view';
         $this->load->view('includes/template', $this->elements);
+    }
+
+    function logout() {
+        $this->session->set_userdata('logged_in', false);
+        $this->index();
     }
 
     /**
