@@ -1,4 +1,4 @@
-Ecommerce WebApplication BIF2API
+Online Learning VJM
 ================================
 
 WebApp Project for Internet Technologies class done by Vince Mukiiri, Joel Githinji and Mike Njuguna.
