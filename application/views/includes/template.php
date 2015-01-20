@@ -1,6 +1,6 @@
 <?php
 $headerelements = array(
-    'title' => $title . " - Online Learning",
+    'title' => $title . " - Online Gallery",
 );
 $this->load->view('includes/header', $headerelements);
 
