@@ -1,5 +1,5 @@
 <div id="wrapper">
-    <div class="panel panel-default" style="width: 70%;">
+    <div class="panel panel-default registration" style="width: 70%;">
 
         <div class="panel-heading">
             <h1 class="panel-title">Registration</h1>

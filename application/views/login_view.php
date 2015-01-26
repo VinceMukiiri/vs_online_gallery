@@ -1,3 +1,5 @@
+<div class="logo-wrapper"><a href="<?php echo site_url() ?>"><img src="<?php echo base_url(); ?>_/img/logo-dark.png" alt="Multipurpose Twitter Bootstrap Template"></a></div>
+
 <div class="container-fluid">
 <div class="panel panel-default" id="login_form">
 

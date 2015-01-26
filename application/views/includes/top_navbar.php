@@ -1,32 +1,40 @@
-<!-- Brand and toggle get grouped for better mobile display -->
-<div class="navbar-header">
-    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-    </button>
-    <a class="navbar-brand" href="<?php echo site_url() ?>/homepage"><img src="<?php echo base_url() ?>/site_data/OnlineLearning.png" class="" style="width: 40%;"></a>
+<div class="mainmenu-wrapper">
+    <div class="container mainmenu-container">
+        <div class="menuextras">
+            <div class="extras">
+                <ul>
+                    <li><a href="#">Terms and Conditions</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li class="shopping-cart-items"><i class="glyphicon glyphicon-shopping-cart icon-white"></i> <a href="page-shopping-cart.html"><b>3 items</b></a></li>
+                    <li><a href="#">Login</a></li>
+                </ul>
+            </div>
+        </div>
+        <nav id="mainmenu" class="mainmenu">
+            <ul>
+                <li class="logo-wrapper"><a href="index.html"><img src="<?php echo base_url(); ?>_/img/logo.png" alt="Multipurpose Twitter Bootstrap Template"></a></li>
+                <li class="active">
+                    <a href="index.html">Home</a>
+                </li>
+                <li class="has-submenu">
+                    <a href="#">Explore <span class="fa fa-chevron-circle-down"></span></a>
+                    <div class="mainmenu-submenu">
+                        <div class="mainmenu-submenu-inner"> 
+                            <div>
+                                <ul>
+                                    <li><a href="#">Most Viewed</a></li>
+                                    <li><a href="#">Most Recent</a></li>
+                                    <li><a href="#">Most Favorited</a></li>
+                                </ul>
+                                
+                            </div>
+                        </div><!-- /mainmenu-submenu-inner -->
+                    </div><!-- /mainmenu-submenu -->
+                </li>
+                <li>
+                    <a href="credits.html">Shop</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
 </div>
-<!-- Top Menu Items -->
-<ul class="nav navbar-right top-nav">
-    <li >
-        <a href="<?php echo site_url() ?>/upload"><i class="fa fa-upload"></i>  Upload</a>
-
-    </li>
-
-
-    <li class="dropdown">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> <?php echo $this->session->userdata('full_name'); ?> <b class="caret"></b></a>
-        <ul class="dropdown-menu">
-            <li>
-                <a href="<?php echo site_url() ?>/homepage/profile"><i class="fa fa-fw fa-user"></i> Profile</a>
-            </li>
-
-            <li class="divider"></li>
-            <li>
-                <a href="<?php echo site_url() ?>/login/logout"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
-            </li>
-        </ul>
-    </li>
-</ul>
