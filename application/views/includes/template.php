@@ -30,12 +30,7 @@ switch ($user) {
         echo '<div id="wrapper">';
         echo "<nav class=\"navbar navbar-inverse navbar-fixed-top\" role=\"navigation\">";
         $this->load->view('includes/top_navbar');
-<<<<<<< HEAD
-        $sidebar_data = array('active' => $title);
-        $this->load->view('includes/sidebar_nav', $sidebar_data);
-=======
         $this->load->view('includes/sidebar_nav');
->>>>>>> 2ec5d35a61ae30db1bf2142a77a073015a75d2c7
         echo "</nav >";
 
         echo '<div id="page-wrapper">';

@@ -49,21 +49,9 @@ $active_group = 'default';
 $active_record = TRUE;
 
 $db['default']['hostname'] = 'localhost';
-<<<<<<< HEAD
 $db['default']['username'] = 'root';
 $db['default']['password'] = '';
 $db['default']['database'] = 'vs_online_gallery';
-=======
-<<<<<<< HEAD
-$db['default']['username'] = '';
-$db['default']['password'] = '';
-$db['default']['database'] = '';
-=======
-$db['default']['username'] = 'root';
-$db['default']['password'] = '';
-$db['default']['database'] = 'online_learning';
->>>>>>> 2ec5d35a61ae30db1bf2142a77a073015a75d2c7
->>>>>>> 5c175b87021f66c7bdbdacc9ab33f5abda152280
 $db['default']['dbdriver'] = 'mysql';
 $db['default']['dbprefix'] = '';
 $db['default']['pconnect'] = TRUE;
