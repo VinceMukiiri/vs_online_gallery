@@ -1,8 +1,10 @@
+<div class="logo-wrapper"><a href="<?php echo site_url() ?>"><img src="<?php echo base_url(); ?>_/img/logo-dark.png" alt="Multipurpose Twitter Bootstrap Template"></a></div>
+
 <div class="container-fluid">
 <div class="panel panel-default" id="login_form">
 
     <div class="panel-heading">
-        <h1 class="panel-title">Admin Login</h1>
+        <h1 class="panel-title"><i class="fa fa-user"></i> Login</h1>
     </div>
 
     <div class="panel-body">
@@ -59,11 +61,11 @@
                     'type' => 'submit',
                     'name' => 'login',
                     'value' => 'Login',
-                    'class' => 'btn btn-defualt',
+                    'class' => 'btn btn-primary',
                     'content' => 'Login',
                 ));
                 ?>
-                <a href="login/registration" class="btn bg-info">Sign Up</a>
+                <a href="<?php echo site_url() ?>/login/registration" class="btn bg-info">Sign Up</a>
             </div>
 
         </div><!-- login button -->

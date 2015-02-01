@@ -1,3 +1,175 @@
+/*-------------------------------------------------------------------
+   GENERAL BODY STYLES
+------------------------------------------------------------------------*/
+body {
+    font-family: Open Sans;
+    background-color: #e6d08f;
+}
+
+h1 {
+    font-family: Oswald;
+}
+
+.registration {
+    margin: 20px auto;
+}
+
+.registration .panel-heading .panel-title {
+    font-size: 36px;
+    text-align: center;
+    color: #d9c179;
+}
+
+.registration .panel-heading {
+    background: #402401;
+}
+
+
+/*-------------------------------------------------------------------
+   MAIN MENU STYLES
+------------------------------------------------------------------------*/
+.mainmenu-wrapper {
+    background-color: #d9c179;
+    font-family: Oswald;
+    border-bottom: 4px solid #a95f03;
+    box-shadow: 0px 5px 20px rgba(0,0,0,0.4);
+}
+
+@media (min-width: 1200px) {
+    .mainmenu-container {
+        width: 100%;
+        padding: 0 0 0 0;
+    }
+}
+
+.menuextras {
+    background-color: #d9c179;
+    padding-right: 75px;
+    padding-left: 75px;
+}
+
+#mainmenu {
+    background-color: #402401;
+    padding-right: 75px;
+    padding-left: 75px;
+}
+
+.mainmenu ul li a,
+.mainmenu .mainmenu-submenu-inner li a {
+    color: #d9c179;
+}
+
+.mainmenu ul li.active a, 
+.mainmenu .mainmenu-submenu-inner li.active a 
+{
+    background-color: #d9c179;
+    color: #402401;
+}
+
+.mainmenu li.logo-wrapper a {
+    border-right: none;
+    padding-right: 100px;
+}
+
+.logo-wrapper {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.logo-wrapper img {
+    width: 320px;
+}
+
+li.mainmenu-open a {
+    
+    color: #d9c179 !important;
+}
+
+.mainmenu .mainmenu-submenu-inner > div {
+    width: 100%;
+}
+
+.mainmenu .mainmenu-submenu {
+    width: 116px;
+    left: auto;
+
+}
+
+.mainmenu-submenu-inner div ul li:hover {
+    background: #d9c179;
+}
+
+.mainmenu-submenu-inner div ul li:hover a{
+    text-decoration: none;
+    color: #402401 !important;
+    background: #d9c179;
+}
+
+
+
+.mainmenu-submenu ul {
+    margin-left: 0px;
+}
+
+.mainmenu-submenu ul li {
+    padding-left: 20px;
+}
+
+.mainmenu-open .mainmenu-submenu {
+    padding-bottom: 10px;
+}
+
+/*-------------------------------------------------------------------
+   HOMEPAGE STYLES
+------------------------------------------------------------------------*/
+.art-box {
+
+    width: 24%;
+    float: left;
+}
+
+
+.art-wrapper .artist {
+    font-size: .9em;
+}
+
+
+.art-wrapper .art-stats {
+    font-size: .8em;
+    text-align: right;
+}
+
+.art-wrapper .art-thumb {
+    min-width: 100%;
+    height: 225px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover !important;
+    overflow: hidden;
+}
+
+.art-wrapper {
+    padding: 5px 5px 7px 5px;
+    text-align: left;
+}
+
+.art-detail {
+    padding: 0px 20px;
+}
+
+
+.stat {
+    margin: 0px .3em;
+}
+
+.stat:last-child {
+    margin-right: 5px;
+}
+
+
+
+
+
 #login_form{width:35em;margin:50px auto 0}.member .fa{display:none}.member:hover .fa{color:#B0BECC;display:block}.member:hover .fa:hover{color:gray;cursor:pointer}
 
 a.thumbnail {

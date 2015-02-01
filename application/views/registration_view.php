@@ -1,6 +1,5 @@
-
 <div id="wrapper">
-    <div class="panel panel-default">
+    <div class="panel panel-default registration" style="width: 70%;">
 
         <div class="panel-heading">
             <h1 class="panel-title">Registration</h1>
@@ -18,16 +17,16 @@
                 <div class="form-group">
                     <?php
                     echo form_label('Username: ', 'username', array(
-                        'class' => 'col-sm-2 control-label'
+                        'class' => 'col-sm-4 control-label'
                     ));
                     ?>
-                    <div class="col-sm-4">
+                    <div class="col-sm-6">
                         <?php
                         //password input
                         echo form_input(array(
                             'name' => 'username',
                             'id' => 'username',
-                            'class' => 'col-sm-4 form-control',
+                            'class' => 'col-sm-6 form-control',
                             'value' => '',
                         ));
                         ?>
@@ -37,16 +36,16 @@
                 <div class="form-group">
                     <?php
                     echo form_label('Password: ', 'password', array(
-                        'class' => 'col-sm-2 control-label'
+                        'class' => 'col-sm-4 control-label'
                     ));
                     ?>
-                    <div class="col-sm-4">
+                    <div class="col-sm-6">
                         <?php
                         //password input
                         echo form_password(array(
                             'name' => 'password',
                             'id' => 'password',
-                            'class' => 'col-sm-4 form-control',
+                            'class' => 'col-sm-6 form-control',
                             'value' => '',
                         ));
                         ?>
@@ -56,16 +55,16 @@
                 <div class="form-group">
                     <?php
                     echo form_label('Frist Name: ', 'firstname', array(
-                        'class' => 'col-sm-2 control-label'
+                        'class' => 'col-sm-4 control-label'
                     ));
                     ?>
-                    <div class="col-sm-4">
+                    <div class="col-sm-6">
                         <?php
                         //password input
                         echo form_input(array(
                             'name' => 'firstname',
                             'id' => 'firstname',
-                            'class' => 'col-sm-4 form-control',
+                            'class' => 'col-sm-6 form-control',
                             'value' => '',
                         ));
                         ?>
@@ -75,17 +74,17 @@
 
                 <div class="form-group">
                     <?php
-                    echo form_label('Surname: ', 'surname', array(
-                        'class' => 'col-sm-2 control-label'
+                    echo form_label('Second Name: ', 'secondname', array(
+                        'class' => 'col-sm-4 control-label'
                     ));
                     ?>
-                    <div class="col-sm-4">
+                    <div class="col-sm-6">
                         <?php
                         //password input
                         echo form_input(array(
-                            'name' => 'surname',
-                            'id' => 'surname',
-                            'class' => 'col-sm-4 form-control',
+                            'name' => 'secondname',
+                            'id' => 'secondname',
+                            'class' => 'col-sm-6 form-control',
                             'value' => '',
                         ));
                         ?>
@@ -95,16 +94,16 @@
                 <div class="form-group">
                     <?php
                     echo form_label('Email', 'email', array(
-                        'class' => 'col-sm-2 control-label'
+                        'class' => 'col-sm-4 control-label'
                     ));
                     ?>
-                    <div class="col-sm-4">
+                    <div class="col-sm-6">
                         <?php
                         //password input
                         echo form_input(array(
                             'name' => 'email',
                             'id' => 'email',
-                            'class' => 'col-sm-4 form-control',
+                            'class' => 'col-sm-6 form-control',
                             'value' => '',
                         ));
                         ?>
@@ -116,16 +115,16 @@
                 <div class="form-group">
                     <?php
                     echo form_label('Date Of Joining', 'date_of_joining', array(
-                        'class' => 'col-sm-2 control-label'
+                        'class' => 'col-sm-4 control-label'
                     ));
                     ?>
-                    <div class="col-sm-4">
+                    <div class="col-sm-6">
                         <?php
                         //password input
                         echo form_input(array(
                             'name' => 'date_of_joining',
                             'id' => 'date_of_joining',
-                            'class' => 'col-sm-4 form-control',
+                            'class' => 'col-sm-6 form-control',
                             'value' => mdate("%Y-%m-%d", time()),
                         ));
                         ?>
@@ -135,17 +134,17 @@
                 <div class="form-group">
                     <?php
                     echo form_label('Photo', 'photo', array(
-                        'class' => 'col-sm-2 control-label'
+                        'class' => 'col-sm-4 control-label'
                     ));
                     ?>
-                    <div class="col-sm-4">
+                    <div class="col-sm-6">
                         <?php
                         //password input
                         echo form_input(array(
                             'type' => 'file',
                             'name' => 'photo',
                             'id' => 'photo',
-                            'class' => 'col-sm-4 form-control',
+                            'class' => 'col-sm-6 form-control',
                             'value' => '',
                         ));
                         ?>
@@ -159,11 +158,13 @@
                             'type' => 'submit',
                             'name' => 'submit',
                             'value' => 'Register',
-                            'class' => 'btn btn-defualt',
+                            'class' => 'btn btn-primary',
                             'content' => 'Register',
                         ));
                         ?>
                     </div>
+                    <a href="<?php echo site_url() ?>/login" class="btn bg-info">Back to login</a>
+
                 </div>
 
 

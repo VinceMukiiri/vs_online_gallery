@@ -61,7 +61,6 @@ class Login extends CI_Controller {
                 'full_name' => $user->first_name . ' ' . $user->second_name,
             ));
 //redirect to member homepage
-        echo "<pre>";$this->session->all_userdata();echo "<pre>";exit;
             redirect('/homepage');
         } else {
             $this->err = TRUE;
@@ -71,9 +70,9 @@ class Login extends CI_Controller {
 
     function registration() {
         if ($this->input->post('submit')) {
-            $config['upload_path'] = './uploads/';
+            $config['upload_path'] = './site_data/profile_pictures/users/';
             $config['allowed_types'] = 'gif|jpg|png';
-            $config['max_size'] = '100';
+            $config['max_size'] = '10000';
             $config['max_width'] = '1024';
             $config['max_height'] = '768';
 
@@ -97,6 +96,7 @@ class Login extends CI_Controller {
             $new_user->email = $this->input->post('email');
 
             $new_user->save();
+            redirect('login');
         }
 
         $this->elements['main_content'] = 'registration_view';
@@ -106,58 +106,6 @@ class Login extends CI_Controller {
     function logout() {
         $this->session->set_userdata('logged_in', false);
         $this->index();
-    }
-
-    /**
-     * admin dashboard with all the options
-     */
-    function dashboard() {
-        switch ($this->uri->segment(3)) {
-            //member management module
-            case 'member_management':
-                $this->load->model('member_model');
-                $member = new Member_Model;
-                $members = $member->get();
-
-                switch ($this->uri->segment(4)) {
-                    case 'edit_member':
-                        $member->load($this->uri->segment(5));
-
-                        $this->elements['main_content'] = 'admin/edit_member_view';
-                        $this->elements['title'] = 'Edit Member';
-                        $this->elements['data'] = array(
-                            'member' => $member,
-                        );
-
-                        $this->load->view('includes/template', $this->elements);
-                        break;
-
-                    default :
-                        $this->elements['main_content'] = 'admin/member_management_view';
-                        $this->elements['title'] = 'Admin Member Management';
-                        $this->elements['data'] = array(
-                            'members' => $members,
-                        );
-
-                        $this->load->view('includes/template', $this->elements);
-                        break;
-                }
-                break;
-
-            //default dashboard
-            default:
-                $this->elements['main_content'] = 'admin/admin_dashboard_view';
-                $this->elements['title'] = 'Admin Dashboard';
-                $this->elements['main_content'] = 'admin/admin_dashboard_view';
-
-                array(
-                    'main_content' => 'admin/admin_dashboard_view',
-                    'title' => 'Admin Dashboard',
-                    'user' => 'admin',
-                );
-                $this->load->view('includes/template', $this->elements);
-                break;
-        }
     }
 
 }
