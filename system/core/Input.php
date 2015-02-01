@@ -6,7 +6,11 @@
  *
  * @package		CodeIgniter
  * @author		ExpressionEngine Dev Team
+<<<<<<< HEAD
  * @copyright	Copyright (c) 2008 - 2014, EllisLab, Inc.
+=======
+ * @copyright	Copyright (c) 2008 - 2011, EllisLab, Inc.
+>>>>>>> 2ec5d35a61ae30db1bf2142a77a073015a75d2c7
  * @license		http://codeigniter.com/user_guide/license.html
  * @link		http://codeigniter.com
  * @since		Version 1.0
@@ -631,6 +635,7 @@ class CI_Input {
 			unset($_COOKIE['$Path']);
 			unset($_COOKIE['$Domain']);
 
+<<<<<<< HEAD
 			// Work-around for PHP bug #66827 (https://bugs.php.net/bug.php?id=66827)
 			//
 			// The session ID sanitizer doesn't check for the value type and blindly does
@@ -649,6 +654,10 @@ class CI_Input {
 					continue;
 				}
 
+=======
+			foreach ($_COOKIE as $key => $val)
+			{
+>>>>>>> 2ec5d35a61ae30db1bf2142a77a073015a75d2c7
 				$_COOKIE[$this->_clean_input_keys($key)] = $this->_clean_input_data($val);
 			}
 		}

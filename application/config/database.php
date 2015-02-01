@@ -49,9 +49,15 @@ $active_group = 'default';
 $active_record = TRUE;
 
 $db['default']['hostname'] = 'localhost';
+<<<<<<< HEAD
 $db['default']['username'] = '';
 $db['default']['password'] = '';
 $db['default']['database'] = '';
+=======
+$db['default']['username'] = 'root';
+$db['default']['password'] = '';
+$db['default']['database'] = 'online_learning';
+>>>>>>> 2ec5d35a61ae30db1bf2142a77a073015a75d2c7
 $db['default']['dbdriver'] = 'mysql';
 $db['default']['dbprefix'] = '';
 $db['default']['pconnect'] = TRUE;

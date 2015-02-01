@@ -52,7 +52,11 @@ $autoload['packages'] = array();
 |	$autoload['libraries'] = array('database', 'session', 'xmlrpc');
 */
 
+<<<<<<< HEAD
 $autoload['libraries'] = array();
+=======
+$autoload['libraries'] = array('database', 'FirePHPCore/fb', 'session');
+>>>>>>> 2ec5d35a61ae30db1bf2142a77a073015a75d2c7
 
 
 /*
@@ -64,7 +68,11 @@ $autoload['libraries'] = array();
 |	$autoload['helper'] = array('url', 'file');
 */
 
+<<<<<<< HEAD
 $autoload['helper'] = array();
+=======
+$autoload['helper'] = array('url', 'form');
+>>>>>>> 2ec5d35a61ae30db1bf2142a77a073015a75d2c7
 
 
 /*

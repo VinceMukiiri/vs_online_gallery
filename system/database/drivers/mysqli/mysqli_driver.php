@@ -6,7 +6,11 @@
  *
  * @package		CodeIgniter
  * @author		ExpressionEngine Dev Team
+<<<<<<< HEAD
  * @copyright	Copyright (c) 2008 - 2014, EllisLab, Inc.
+=======
+ * @copyright	Copyright (c) 2008 - 2011, EllisLab, Inc.
+>>>>>>> 2ec5d35a61ae30db1bf2142a77a073015a75d2c7
  * @license		http://codeigniter.com/user_guide/license.html
  * @link		http://codeigniter.com
  * @since		Version 1.0
@@ -56,7 +60,11 @@ class CI_DB_mysqli_driver extends CI_DB {
 
 	// whether SET NAMES must be used to set the character set
 	var $use_set_names;
+<<<<<<< HEAD
 
+=======
+	
+>>>>>>> 2ec5d35a61ae30db1bf2142a77a073015a75d2c7
 	// --------------------------------------------------------------------
 
 	/**
@@ -311,8 +319,23 @@ class CI_DB_mysqli_driver extends CI_DB {
 			return $str;
 		}
 
+<<<<<<< HEAD
 
 		$str = mysqli_real_escape_string($this->conn_id, $str);
+=======
+		if (function_exists('mysqli_real_escape_string') AND is_object($this->conn_id))
+		{
+			$str = mysqli_real_escape_string($this->conn_id, $str);
+		}
+		elseif (function_exists('mysql_escape_string'))
+		{
+			$str = mysql_escape_string($str);
+		}
+		else
+		{
+			$str = addslashes($str);
+		}
+>>>>>>> 2ec5d35a61ae30db1bf2142a77a073015a75d2c7
 
 		// escape LIKE condition wildcards
 		if ($like === TRUE)
