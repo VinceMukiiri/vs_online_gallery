@@ -5,7 +5,11 @@
  * An open source application development framework for PHP 5.1.6 or newer
  *
  * @package		CodeIgniter
+<<<<<<< HEAD
  * @copyright	Copyright (c) 2008 - 2014, EllisLab, Inc.
+=======
+ * @copyright	Copyright (c) 2008 - 2011, EllisLab, Inc.
+>>>>>>> 2ec5d35a61ae30db1bf2142a77a073015a75d2c7
  * @license		http://codeigniter.com/user_guide/license.html
  * @author		EllisLab Dev Team
  * @link		http://codeigniter.com
@@ -36,7 +40,11 @@ class CI_DB_pdo_driver extends CI_DB {
 	var $_escape_char = '';
 	var $_like_escape_str;
 	var $_like_escape_chr;
+<<<<<<< HEAD
 
+=======
+	
+>>>>>>> 2ec5d35a61ae30db1bf2142a77a073015a75d2c7
 
 	/**
 	 * The syntax to count rows is slightly different across different
@@ -45,7 +53,11 @@ class CI_DB_pdo_driver extends CI_DB {
 	 */
 	var $_count_string = "SELECT COUNT(*) AS ";
 	var $_random_keyword;
+<<<<<<< HEAD
 
+=======
+	
+>>>>>>> 2ec5d35a61ae30db1bf2142a77a073015a75d2c7
 	var $options = array();
 
 	function __construct($params)
@@ -190,12 +202,22 @@ class CI_DB_pdo_driver extends CI_DB {
 	{
 		$sql = $this->_prep_query($sql);
 		$result_id = $this->conn_id->prepare($sql);
+<<<<<<< HEAD
 
 		if (is_object($result_id) && $result_id->execute())
+=======
+		$result_id->execute();
+		
+		if (is_object($result_id))
+>>>>>>> 2ec5d35a61ae30db1bf2142a77a073015a75d2c7
 		{
 			if (is_numeric(stripos($sql, 'SELECT')))
 			{
 				$this->affect_rows = count($result_id->fetchAll());
+<<<<<<< HEAD
+=======
+				$result_id->execute();
+>>>>>>> 2ec5d35a61ae30db1bf2142a77a073015a75d2c7
 			}
 			else
 			{
@@ -205,9 +227,14 @@ class CI_DB_pdo_driver extends CI_DB {
 		else
 		{
 			$this->affect_rows = 0;
+<<<<<<< HEAD
 			return FALSE;
 		}
 
+=======
+		}
+		
+>>>>>>> 2ec5d35a61ae30db1bf2142a77a073015a75d2c7
 		return $result_id;
 	}
 

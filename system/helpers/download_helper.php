@@ -6,7 +6,11 @@
  *
  * @package		CodeIgniter
  * @author		ExpressionEngine Dev Team
+<<<<<<< HEAD
  * @copyright	Copyright (c) 2008 - 2014, EllisLab, Inc.
+=======
+ * @copyright	Copyright (c) 2008 - 2011, EllisLab, Inc.
+>>>>>>> 2ec5d35a61ae30db1bf2142a77a073015a75d2c7
  * @license		http://codeigniter.com/user_guide/license.html
  * @link		http://codeigniter.com
  * @since		Version 1.0
@@ -80,7 +84,11 @@ if ( ! function_exists('force_download'))
 		// Generate the server headers
 		if (strpos($_SERVER['HTTP_USER_AGENT'], "MSIE") !== FALSE)
 		{
+<<<<<<< HEAD
 			header('Content-Type: '.$mime);
+=======
+			header('Content-Type: "'.$mime.'"');
+>>>>>>> 2ec5d35a61ae30db1bf2142a77a073015a75d2c7
 			header('Content-Disposition: attachment; filename="'.$filename.'"');
 			header('Expires: 0');
 			header('Cache-Control: must-revalidate, post-check=0, pre-check=0');
@@ -90,7 +98,11 @@ if ( ! function_exists('force_download'))
 		}
 		else
 		{
+<<<<<<< HEAD
 			header('Content-Type: '.$mime);
+=======
+			header('Content-Type: "'.$mime.'"');
+>>>>>>> 2ec5d35a61ae30db1bf2142a77a073015a75d2c7
 			header('Content-Disposition: attachment; filename="'.$filename.'"');
 			header("Content-Transfer-Encoding: binary");
 			header('Expires: 0');
@@ -102,5 +114,9 @@ if ( ! function_exists('force_download'))
 	}
 }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 2ec5d35a61ae30db1bf2142a77a073015a75d2c7
 /* End of file download_helper.php */
 /* Location: ./system/helpers/download_helper.php */

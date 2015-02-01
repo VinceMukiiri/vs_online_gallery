@@ -5,7 +5,11 @@ $lang['ftp_unable_to_connect']		= "Unable to connect to your FTP server using th
 $lang['ftp_unable_to_login']		= "Unable to login to your FTP server. Please check your username and password.";
 $lang['ftp_unable_to_makdir']		= "Unable to create the directory you have specified.";
 $lang['ftp_unable_to_changedir']	= "Unable to change directories.";
+<<<<<<< HEAD
 $lang['ftp_unable_to_chmod']		= "Unable to set file permissions. Please check your path.";
+=======
+$lang['ftp_unable_to_chmod']		= "Unable to set file permissions. Please check your path. Note: This feature is only available in PHP 5 or higher.";
+>>>>>>> 2ec5d35a61ae30db1bf2142a77a073015a75d2c7
 $lang['ftp_unable_to_upload']		= "Unable to upload the specified file. Please check your path.";
 $lang['ftp_unable_to_download']		= "Unable to download the specified file. Please check your path.";
 $lang['ftp_no_source_file']			= "Unable to locate the source file. Please check your path.";

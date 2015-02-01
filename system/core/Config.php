@@ -6,7 +6,11 @@
  *
  * @package		CodeIgniter
  * @author		ExpressionEngine Dev Team
+<<<<<<< HEAD
  * @copyright	Copyright (c) 2008 - 2014, EllisLab, Inc.
+=======
+ * @copyright	Copyright (c) 2008 - 2011, EllisLab, Inc.
+>>>>>>> 2ec5d35a61ae30db1bf2142a77a073015a75d2c7
  * @license		http://codeigniter.com/user_guide/license.html
  * @link		http://codeigniter.com
  * @since		Version 1.0
@@ -68,7 +72,11 @@ class CI_Config {
 		{
 			if (isset($_SERVER['HTTP_HOST']))
 			{
+<<<<<<< HEAD
 				$base_url = (empty($_SERVER['HTTPS']) OR strtolower($_SERVER['HTTPS']) === 'off') ? 'http' : 'https';
+=======
+				$base_url = isset($_SERVER['HTTPS']) && strtolower($_SERVER['HTTPS']) !== 'off' ? 'https' : 'http';
+>>>>>>> 2ec5d35a61ae30db1bf2142a77a073015a75d2c7
 				$base_url .= '://'. $_SERVER['HTTP_HOST'];
 				$base_url .= str_replace(basename($_SERVER['SCRIPT_NAME']), '', $_SERVER['SCRIPT_NAME']);
 			}

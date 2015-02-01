@@ -3,7 +3,11 @@
     <type>org.netbeans.modules.php.project</type>
     <configuration>
         <data xmlns="http://www.netbeans.org/ns/php-project/1">
+<<<<<<< HEAD
             <name>vs_online_gallery</name>
+=======
+            <name>vjm_onlinelearning</name>
+>>>>>>> 2ec5d35a61ae30db1bf2142a77a073015a75d2c7
         </data>
     </configuration>
 </project>

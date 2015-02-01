@@ -61,7 +61,10 @@ class Login extends CI_Controller {
                 'full_name' => $user->first_name . ' ' . $user->second_name,
             ));
 //redirect to member homepage
+<<<<<<< HEAD
         echo "<pre>";$this->session->all_userdata();echo "<pre>";exit;
+=======
+>>>>>>> 5c175b87021f66c7bdbdacc9ab33f5abda152280
             redirect('/homepage');
         } else {
             $this->err = TRUE;

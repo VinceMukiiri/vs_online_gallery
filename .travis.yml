@@ -1,5 +1,8 @@
 branches:
   except:
     - 2.1-stable
+<<<<<<< HEAD
     - 2.2-stable
+=======
+>>>>>>> 2ec5d35a61ae30db1bf2142a77a073015a75d2c7
     - master

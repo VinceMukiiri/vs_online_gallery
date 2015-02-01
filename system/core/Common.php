@@ -6,7 +6,11 @@
  *
  * @package		CodeIgniter
  * @author		ExpressionEngine Dev Team
+<<<<<<< HEAD
  * @copyright	Copyright (c) 2008 - 2014, EllisLab, Inc.
+=======
+ * @copyright	Copyright (c) 2008 - 2011, EllisLab, Inc.
+>>>>>>> 2ec5d35a61ae30db1bf2142a77a073015a75d2c7
  * @license		http://codeigniter.com/user_guide/license.html
  * @link		http://codeigniter.com
  * @since		Version 1.0
@@ -32,6 +36,12 @@
 /**
 * Determines if the current version of PHP is greater then the supplied value
 *
+<<<<<<< HEAD
+=======
+* Since there are a few places where we conditionally test for PHP > 5
+* we'll set a static variable.
+*
+>>>>>>> 2ec5d35a61ae30db1bf2142a77a073015a75d2c7
 * @access	public
 * @param	string
 * @return	bool	TRUE if the current version is $version or higher
@@ -251,8 +261,12 @@ if ( ! function_exists('get_config'))
 			}
 		}
 
+<<<<<<< HEAD
 		$_config[0] =& $config;
 		return $_config[0];
+=======
+		return $_config[0] =& $config;
+>>>>>>> 2ec5d35a61ae30db1bf2142a77a073015a75d2c7
 	}
 }
 
@@ -468,6 +482,12 @@ if ( ! function_exists('_exception_handler'))
 	{
 		 // We don't bother with "strict" notices since they tend to fill up
 		 // the log file with excess information that isn't normally very helpful.
+<<<<<<< HEAD
+=======
+		 // For example, if you are running PHP 5 and you use version 4 style
+		 // class functions (without prefixes like "public", "private", etc.)
+		 // you'll get notices telling you that these have been deprecated.
+>>>>>>> 2ec5d35a61ae30db1bf2142a77a073015a75d2c7
 		if ($severity == E_STRICT)
 		{
 			return;

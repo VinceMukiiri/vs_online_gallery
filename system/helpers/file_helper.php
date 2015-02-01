@@ -6,7 +6,11 @@
  *
  * @package		CodeIgniter
  * @author		ExpressionEngine Dev Team
+<<<<<<< HEAD
  * @copyright	Copyright (c) 2008 - 2014, EllisLab, Inc.
+=======
+ * @copyright	Copyright (c) 2008 - 2011, EllisLab, Inc.
+>>>>>>> 2ec5d35a61ae30db1bf2142a77a073015a75d2c7
  * @license		http://codeigniter.com/user_guide/license.html
  * @link		http://codeigniter.com
  * @since		Version 1.0
@@ -238,7 +242,11 @@ if ( ! function_exists('get_dir_file_info'))
 				$source_dir = rtrim(realpath($source_dir), DIRECTORY_SEPARATOR).DIRECTORY_SEPARATOR;
 			}
 
+<<<<<<< HEAD
 			// Used to be foreach (scandir($source_dir, 1) as $file), but scandir() is simply not as fast
+=======
+			// foreach (scandir($source_dir, 1) as $file) // In addition to being PHP5+, scandir() is simply not as fast
+>>>>>>> 2ec5d35a61ae30db1bf2142a77a073015a75d2c7
 			while (FALSE !== ($file = readdir($fp)))
 			{
 				if (@is_dir($source_dir.$file) AND strncmp($file, '.', 1) !== 0 AND $top_level_only === FALSE)
