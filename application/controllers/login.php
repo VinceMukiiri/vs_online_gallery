@@ -59,6 +59,7 @@ class Login extends CI_Controller {
                 'user_id' => $user->user_id,
                 'logged_in' => true,
                 'full_name' => $user->first_name . ' ' . $user->second_name,
+                'user_type' => $user->user_type
             ));
 //redirect to member homepage
             redirect('/homepage');
