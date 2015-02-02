@@ -219,3 +219,37 @@ a.thumbnail {
 .container.fullpage {
     min-height: 768px;
 }
+
+.infotable{
+    float: left;
+    color:grey;
+    clear:right;
+    border:1.5px solid #000000;
+    margin:10px 0 10px 0;
+    font-family:Helvetica;
+    width:91%;
+}
+
+.floats{
+    float: left;
+    border:1.5px solid #ECEBEE;
+    margin:2px;
+}
+
+#ppic img{
+    height:200px;
+    width:250px;
+    float:left;
+    margin:10px 0px;
+    float:left;
+    margin:0 30px;
+}
+
+.width-auto{
+    width: auto;
+}
+
+.black{
+    color: black;
+    border-color: black!important;
+}

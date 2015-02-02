@@ -14,6 +14,11 @@ if ($main_content == 'login_view' || $main_content == 'registration_view') {
     $this->load->view('includes/top_navbar');
 }
 
+if ($main_content == 'login_view' || $main_content == 'registration_view') {
+    //don't load footer
+} else {
+     $this->load->view('includes/sidebar');
+}
 
 echo '<div id="page-wrapper">';
 FB::log($main_content, 'The main content is'); //console message used for debugging
