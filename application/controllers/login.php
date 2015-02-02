@@ -105,7 +105,7 @@ class Login extends CI_Controller {
 
     function logout() {
         $this->session->set_userdata('logged_in', false);
-        $this->index();
+        redirect('/homepage');
     }
 
 }

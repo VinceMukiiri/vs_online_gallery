@@ -1,7 +1,7 @@
-<div class="logo-wrapper"><a href="<?php echo site_url() ?>"><img src="<?php echo base_url(); ?>_/img/logo-dark.png" alt="Multipurpose Twitter Bootstrap Template"></a></div>
+<div class="logo-wrapper-dark"><a href="<?php echo site_url() ?>"><img src="<?php echo base_url(); ?>_/img/logo-dark.png" alt="Multipurpose Twitter Bootstrap Template"></a></div>
 
 <div class="container-fluid">
-<div class="panel panel-default" id="login_form">
+<div class="panel panel-default my-panel" id="login_form">
 
     <div class="panel-heading">
         <h1 class="panel-title"><i class="fa fa-user"></i> Login</h1>

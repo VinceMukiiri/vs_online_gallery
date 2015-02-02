@@ -8,20 +8,25 @@ body {
 
 h1 {
     font-family: Oswald;
+    font-size: 32px;
 }
 
-.registration {
+.my-panel {
     margin: 20px auto;
 }
 
-.registration .panel-heading .panel-title {
+.my-panel .panel-heading .panel-title {
     font-size: 36px;
     text-align: center;
     color: #d9c179;
 }
 
-.registration .panel-heading {
+.my-panel .panel-heading {
     background: #402401;
+}
+
+a:hover {
+    color: #a95f03 !important;
 }
 
 
@@ -55,12 +60,14 @@ h1 {
 }
 
 .mainmenu ul li a,
-.mainmenu .mainmenu-submenu-inner li a {
+.mainmenu .mainmenu-submenu-inner li a,
+.dropdown-menu li a
+{
     color: #d9c179;
 }
 
 .mainmenu ul li.active a, 
-.mainmenu .mainmenu-submenu-inner li.active a 
+.mainmenu .mainmenu-submenu-inner li.active a
 {
     background-color: #d9c179;
     color: #402401;
@@ -71,17 +78,12 @@ h1 {
     padding-right: 100px;
 }
 
-.logo-wrapper {
-    padding-top: 10px;
-    padding-bottom: 10px;
-}
 
-.logo-wrapper img {
-    width: 320px;
-}
+
+
 
 li.mainmenu-open a {
-    
+
     color: #d9c179 !important;
 }
 
@@ -95,17 +97,19 @@ li.mainmenu-open a {
 
 }
 
-.mainmenu-submenu-inner div ul li:hover {
+.mainmenu-submenu-inner div ul li:hover,
+.dropdown-menu li:hover
+{
     background: #d9c179;
 }
 
-.mainmenu-submenu-inner div ul li:hover a{
+.mainmenu-submenu-inner div ul li:hover a,
+.dropdown-menu li:hover a
+{
     text-decoration: none;
     color: #402401 !important;
     background: #d9c179;
 }
-
-
 
 .mainmenu-submenu ul {
     margin-left: 0px;
@@ -117,6 +121,30 @@ li.mainmenu-open a {
 
 .mainmenu-open .mainmenu-submenu {
     padding-bottom: 10px;
+}
+
+#login_form {
+    width:35em;
+    margin:10px auto 0
+}
+
+.logo-wrapper,
+.logo-wrapper-dark
+{
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+}
+
+
+.logo-wrapper-dark a img {
+    display: block;
+    width: 320px;
+    margin: 0px auto;
+}
+
+.section .container:first-child h1 {
+    font-size: 32px;
 }
 
 /*-------------------------------------------------------------------
@@ -166,11 +194,23 @@ li.mainmenu-open a {
     margin-right: 5px;
 }
 
+.btn:hover {
+    background: #402401;
+}
 
 
 
-
-#login_form{width:35em;margin:50px auto 0}.member .fa{display:none}.member:hover .fa{color:#B0BECC;display:block}.member:hover .fa:hover{color:gray;cursor:pointer}
+.member .fa {
+    display:none
+}
+.member:hover .fa {
+    color:#B0BECC;
+    display:block
+}
+.member:hover .fa:hover {
+    color:gray;
+    cursor:pointer
+}
 
 a.thumbnail {
     text-decoration: none;

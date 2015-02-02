@@ -1,5 +1,8 @@
+<div class="logo-wrapper-dark"><a href="<?php echo site_url() ?>"><img src="<?php echo base_url(); ?>_/img/logo-dark.png" alt="Multipurpose Twitter Bootstrap Template"></a></div>
+
+
 <div id="wrapper">
-    <div class="panel panel-default registration" style="width: 70%;">
+    <div class="panel panel-default my-panel" style="width: 70%;">
 
         <div class="panel-heading">
             <h1 class="panel-title">Registration</h1>
@@ -158,12 +161,12 @@
                             'type' => 'submit',
                             'name' => 'submit',
                             'value' => 'Register',
-                            'class' => 'btn btn-primary',
+                            'class' => 'btn',
                             'content' => 'Register',
                         ));
                         ?>
                     </div>
-                    <a href="<?php echo site_url() ?>/login" class="btn bg-info">Back to login</a>
+                    <a href="<?php echo site_url() ?>/login" class="btn">Back to login</a>
 
                 </div>
 
