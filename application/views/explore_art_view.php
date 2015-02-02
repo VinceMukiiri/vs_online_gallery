@@ -23,7 +23,7 @@ foreach ($arts as $time => $art) :
         <div class = "row">
         <?php endif; ?>
         <div class = "col-xs-6 col-md-3">
-            <a href="view?c=<?php echo $art->content_id ?>" class = "thumbnail">
+            <a href="<?php echo base_url() . 'view?c=' . $art->content_id ?>" class = "thumbnail">
                 <h3 class="text-success"><?php echo $art->title ?></h3>
                 <p><?php echo $content->description ?></p>
                 <small class="text-right"><?php echo $user->first_name . " " . $user->second_name ?></small>

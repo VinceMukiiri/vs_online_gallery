@@ -13,7 +13,7 @@
         ?>
         <div class="art-box">
             <div class="art-wrapper">
-                <a href="explore/view?c=<?php echo $art->art_id ?>">
+                <a href="<?php echo base_url() . 'index.php/explore/view?c=' . $art->art_id ?>">
                 <img src="<?php echo base_url() . 'artwork/' . $art->file_name?>" class="img-responsive" alt="">
                 </a>
                 <div class="row">
