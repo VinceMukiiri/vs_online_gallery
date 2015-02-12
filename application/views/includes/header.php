@@ -16,8 +16,9 @@
         <!-- Custom CSS-->
         <link type="text/css" rel="stylesheet" href="<?php echo base_url(); ?>_/css/mystyles.css" media="screen" title="no title" />
 
-
+        <script src="<?php echo base_url() ?>_/js/imagesloaded.pkgd.min.js"></script>
         <script src="<?php echo base_url() ?>_/js/masonry.pkgd.js"></script>
+
         <script src="<?php echo base_url() ?>_/js/respond.js"></script>
 
     </head>

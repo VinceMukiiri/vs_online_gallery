@@ -5,8 +5,36 @@
                 <ul>
                     <li><a href="#">Terms and Conditions</a></li>
                     <li><a href="#">Privacy Policy</a></li>
-                    <li class="shopping-cart-items"><i class="glyphicon glyphicon-shopping-cart icon-white"></i> <a href="page-shopping-cart.html"><b>3 items</b></a></li>
-                    <li><a href="#">Login</a></li>
+
+
+                    <?php
+                    if ($this->session->userdata('logged_in')):
+                        ?>
+                        <li class="shopping-cart-items"><i class="glyphicon glyphicon-shopping-cart icon-white"></i> <a href="#"><b>3 items</b></a></li>
+                        <li>
+                            <a href="<?php echo site_url() ?>/upload">Upload</a>
+                        </li>
+                        <li>
+                            <div class="dropdown">
+                                <a class="#" data-toggle='dropdown' href="#">
+                                    <?php echo $this->session->userdata('full_name') ?>
+                                </a>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li class="menuitem"><a href="#">Profile</a></li>
+                                    <li class="menuitem"><a href="<?php echo site_url() ?>/login/logout">Logout</a></li>
+                                </ul>
+                            </div>
+                        </li>
+
+                        <?php
+                    else:
+                        ?>
+                        <li>
+                            <a href="<?php echo site_url() ?>/login">Login</a>
+                        </li>
+                    <?php
+                    endif;
+                    ?>
                 </ul>
             </div>
         </div>
@@ -26,7 +54,7 @@
                                     <li><a href="#">Most Recent</a></li>
                                     <li><a href="#">Most Favorited</a></li>
                                 </ul>
-                                
+
                             </div>
                         </div><!-- /mainmenu-submenu-inner -->
                     </div><!-- /mainmenu-submenu -->
