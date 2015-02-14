@@ -1,0 +1,1 @@
+ALTER TABLE `art` ADD `genre` VARCHAR(255) NULL AFTER `description`;

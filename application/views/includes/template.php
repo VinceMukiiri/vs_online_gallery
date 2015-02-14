@@ -17,10 +17,13 @@ if ($main_content == 'login_view' || $main_content == 'registration_view') {
 if ($main_content == 'login_view' || $main_content == 'registration_view') {
     //don't load footer
 } else {
-     $this->load->view('includes/sidebar');
+if (isset($sidebar)) {
+    $this->load->view($sidebar);
+}
+     
 }
 
-echo '<div id="page-wrapper">';
+echo '<div id="page-wrapper ">';
 FB::log($main_content, 'The main content is'); //console message used for debugging
 if (isset($data)) {
     $this->load->view($main_content, $data);
