@@ -166,7 +166,7 @@
                         ));
                         ?>
                     </div>
-                    <a href="<?php echo site_url() ?>/login" class="btn">Back to login</a>
+                    <a href="<?php echo site_url() ?>login" class="btn">Back to login</a>
 
                 </div>
 

@@ -1,6 +1,6 @@
 <?php
 
-class Login extends CI_Controller {
+class Login extends MY_Controller {
 
     /**
      * Set to true when user enters a wrong username and password
@@ -26,6 +26,7 @@ class Login extends CI_Controller {
      * login page
      */
     function index() {
+        $this->session->set_userdata('cart', array());
         if ($this->session->userdata('logged_in')) {
 
             redirect('/homepage');
@@ -104,9 +105,9 @@ class Login extends CI_Controller {
         $this->load->view('includes/template', $this->elements);
     }
 
-    function logout() {
-        $this->session->set_userdata('logged_in', false);
-        redirect('/homepage');
-    }
+//    function logout() {
+//        $this->session->set_userdata('logged_in', false);
+//        redirect('/homepage');
+//    }
 
 }

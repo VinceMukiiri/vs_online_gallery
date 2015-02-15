@@ -13,70 +13,78 @@ class Explore extends CI_Controller {
     );
 
     function index() {
-        $this->most_recent();
-    }
-
-    function most_recent() {
         $this->load->model('art_model');
         $art = new Art_Model();
+
+        $this->load->model('category_model');
+        $category = new Category_Model();
+        $categories = $category->get();
+        $this->elements['data']['categories'] = $categories;
         
-        $arts = $art->get_by_timestamp();
+        if($this->input->get('cat')) {
+            $this->db->where('category_id', $this->input->get('cat'));
+        }
+
+        switch ($this->input->get('crit')) {
+            case 'most_recent':
+                $arts = $art->get_by_timestamp();
+                $this->elements['data']['heading'] = 'Most Recent';
+                $this->elements['title'] = 'Most Recent';
+                break;
+
+            case 'most_viewed':
+                $arts = $art->get_by_views();
+                $this->elements['data']['heading'] = 'Most Viewed';
+                $this->elements['title'] = 'Most Viewed';
+                break;
+
+            case 'most_favorited':
+                $arts = $art->get_by_favorites();
+                $this->elements['data']['heading'] = 'Most Favorited';
+                $this->elements['title'] = 'Most Favorites';
+                break;
+
+            default:
+                $arts = $art->get_by_timestamp();
+                $this->elements['data']['heading'] = 'Most Recent';
+                $this->elements['title'] = 'Most Recent';
+                break;
+                break;
+        }
+
+
+
         $this->elements['data']['arts'] = $arts;
-        
         $this->elements['main_content'] = 'explore_art_view';
-        
-        $this->elements['data']['heading'] = 'Most Recent';
-        $this->elements['title'] = 'Most Recent';
         $this->load->view('includes/template', $this->elements);
     }
-    
+
     function most_viewed() {
         $this->load->model('art_model');
         $art = new Art_Model();
-        
+
         $arts = $art->get_by_views();
-        $this->elements['data']['arts'] = $arts;
-        
-        $this->elements['main_content'] = 'explore_art_view';
         $this->elements['data']['heading'] = 'Most Viewed';
         $this->elements['title'] = 'Most Viewed';
+
+
+        $this->elements['main_content'] = 'explore_art_view';
+        $this->elements['data']['arts'] = $arts;
         $this->load->view('includes/template', $this->elements);
     }
-    
-    function view() {
-        
-        $this->load->model('comment_model');
-        $comment = new Comment_Model();
-        if($this->input->post('submit')) {
-            $comment->comment_text = $this->input->post('comment');
-            $comment->art_id = $this->input->get('c');
-            $comment->date = time();
-            $comment->user_id = $this->session->userdata('user_id');
-            
-            $comment->save();
-        }
+
+    function most_favorites() {
         $this->load->model('art_model');
         $art = new Art_Model();
-        $art->load($this->input->get('c'));
-        $art->AddView();
-                
-        $this->load->model('user_model');
-        $uploader = new User_Model();
-        $uploader->load($art->uploader_user_id);
-        
-        $comments = $comment->get_by_art($art->art_id);
-        
-        $this->elements['data']['art'] = $art;
-        $this->elements['data']['uploader'] = $uploader;
-        $this->elements['data']['comments'] = $comments;
-        
-        
-        $this->elements['main_content'] = 'view_art_view';
-        $this->elements['title'] = 'View';
-        
+
+        $arts = $art->get_by_favorites();
+
+        $this->elements['data']['heading'] = 'Most Favorited';
+        $this->elements['title'] = 'Most Favorites';
+        $this->elements['data']['arts'] = $arts;
+
+        $this->elements['main_content'] = 'explore_art_view';
         $this->load->view('includes/template', $this->elements);
     }
-    
-    
 
 }

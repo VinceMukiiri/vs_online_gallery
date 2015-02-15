@@ -10,9 +10,9 @@
                     <?php
                     if ($this->session->userdata('logged_in')):
                         ?>
-                        <li class="shopping-cart-items"><i class="glyphicon glyphicon-shopping-cart icon-white"></i> <a href="#"><b>3 items</b></a></li>
+                    <li class="shopping-cart-items"><i class="glyphicon glyphicon-shopping-cart icon-white"></i> <a href="#"><b><?php echo count($this->session->userdata('cart')) ?> items</b></a></li>
                         <li>
-                            <a href="<?php echo site_url() ?>/upload">Upload</a>
+                            <a href="<?php echo site_url() ?>upload">Upload</a>
                         </li>
                         <li>
                             <div class="dropdown">
@@ -21,7 +21,7 @@
                                 </a>
                                 <ul class="dropdown-menu" role="menu">
                                     <li class="menuitem"><a href="#">Profile</a></li>
-                                    <li class="menuitem"><a href="<?php echo site_url() ?>/login/logout">Logout</a></li>
+                                    <li class="menuitem"><a href="<?php echo site_url() ?>login/logout">Logout</a></li>
                                 </ul>
                             </div>
                         </li>
@@ -30,7 +30,7 @@
                     else:
                         ?>
                         <li>
-                            <a href="<?php echo site_url() ?>/login">Login</a>
+                            <a href="<?php echo site_url() ?>login">Login</a>
                         </li>
                     <?php
                     endif;
@@ -50,9 +50,9 @@
                         <div class="mainmenu-submenu-inner"> 
                             <div>
                                 <ul>
-                                    <li><a href="#">Most Viewed</a></li>
-                                    <li><a href="#">Most Recent</a></li>
-                                    <li><a href="#">Most Favorited</a></li>
+                                    <li><a href="<?php echo base_url() . 'explore?crit=most_recent' ?>">Most Recent</a></li>
+                                    <li><a href="<?php echo base_url() . 'explore?crit=most_viewed' ?>">Most Viewed</a></li>
+                                    <li><a href="<?php echo base_url() . 'explore?crit=most_favorited' ?>">Most Favorited</a></li>
                                 </ul>
 
                             </div>
@@ -60,7 +60,7 @@
                     </div><!-- /mainmenu-submenu -->
                 </li>
                 <li>
-                    <a href="credits.html">Shop</a>
+                    <a href="credits.html">Checkout</a>
                 </li>
             </ul>
         </nav>

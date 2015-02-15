@@ -37,9 +37,14 @@ class Upload extends CI_Controller {
 
             $this->load->view('includes/template', $this->elements);
         } else {
+            $this->load->model('category_model');
+
+            $category = new Category_Model();
+            $categories = $category->get();
+            
             $this->elements['main_content'] = 'upload_details_view';
             $this->elements['data']['upload_data'] = $this->upload->data();
-
+            $this->elements['data']['categories'] = $categories;
             $this->load->view('includes/template', $this->elements);
         }
     }
@@ -53,11 +58,12 @@ class Upload extends CI_Controller {
         $art->description = $this->input->post('description');
         $art->file_name = $this->input->post('file_name');
         $art->file_type = $this->input->post('file_ext');
+        $art->category_id = $this->input->post('category');
         $art->uploader_user_id = $this->session->userdata('user_id');
         $art->upload_date = time();
-        
+
         $art->save();
-        
+
         redirect('/homepage');
     }
 

@@ -150,21 +150,31 @@ li.mainmenu-open a {
 /*-------------------------------------------------------------------
    HOMEPAGE STYLES
 ------------------------------------------------------------------------*/
-.art-box {
+.art-box-qtr {
 
     width: 24%;
     float: left;
 }
 
+.art-box-thrd {
 
-.art-wrapper .artist {
-    font-size: .9em;
+    width: 32%;
+    float: left;
 }
 
 
+.art-wrapper .artist,
+.art-wrapper .category {
+    font-size: .9em;
+}
+
+.art-wrapper .category {
+    text-align: right;
+}
+
 .art-wrapper .art-stats {
     font-size: .8em;
-    text-align: right;
+    text-align: center;
 }
 
 .art-wrapper .art-thumb {
@@ -252,4 +262,65 @@ a.thumbnail {
 .black{
     color: black;
     border-color: black!important;
+}
+
+/*-------------------------------------------------------------------
+   VIEW ART STYLES
+------------------------------------------------------------------------*/
+
+.padded-btn {
+    margin: 5px;
+}
+
+.form-margin {
+    margin-top: 20px;
+}
+
+/*-------------------------------------------------------------------
+   EXPLORE STYLES
+------------------------------------------------------------------------*/
+
+.side-nav {
+    padding-top: 20px;
+
+}
+
+.side-nav ul {
+    font-family: Oswald;
+    font-size: 24px;
+    list-style-type: none;
+    padding: 5px 10px 5px 10px
+
+}
+
+.side-nav a {
+
+    text-decoration: none;
+}
+
+.side-nav li {
+    padding: 5px 10px 5px 5px;
+}
+
+
+
+
+.side-nav li.active {
+   
+    background: #a95f03;
+    padding: 10px 0px 10px 5px;
+}
+
+.side-nav li.active a { 
+     color: #e6d08f !important;
+}
+
+.side-nav li:hover {
+   
+    background: #a95f03;
+    padding: 10px 10px 10px 20px;
+}
+
+.side-nav li:hover a { 
+     color: #e6d08f !important;
 }
