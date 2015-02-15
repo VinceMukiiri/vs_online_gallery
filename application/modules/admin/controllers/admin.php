@@ -22,15 +22,15 @@ class Admin extends MY_Controller{
         $this->load->view('includes/template', $this->elements);
 	}
 
-	public function member_database($filter = NULL){
+	public function member_database($filter = NULL,$member_id = NULL){
 		// echo "SUCCESS";
 		if($filter == "active"):
-		$members = m_admin::get_member_db("active");
+		$members = m_admin::get_member_db("active",$member_id);
 		elseif($filter == "inactive"):
-		$members = m_admin::get_member_db("inactive");
+		$members = m_admin::get_member_db("inactive",$member_id);
 		else:
 			$filter == "all";
-		$members = m_admin::get_member_db("all");
+		$members = m_admin::get_member_db("all",$member_id);
 		endif;
 
 		// echo "<pre>This";print_r($members);echo "</pre>";exit;
@@ -76,6 +76,31 @@ class Admin extends MY_Controller{
 		}else{
 		redirect(base_url().'admin/work_approvals/1');
 		}
+	}
+
+	public function member_logs(){
+		$logs_ = m_admin::get_logs();
+
+		// echo "<pre>This";print_r($logs_);echo "</pre>";exit;
+		$this->elements['result_no'] = count($logs_);
+		$this->elements['main_content'] = 'admin_logs_view';
+		$this->elements['sidebar'] = 'admin_sidebar';
+        $this->elements['title'] = 'Member Logs';
+        $this->elements['logs'] = $logs_;
+        $this->load->view('includes/template', $this->elements);
+	}
+
+	public function memberdetails($status = NULL,$member_id = NULL){
+		$memberdetails = m_admin::get_member_db($status,$member_id);
+
+		// echo "<pre>This";print_r($memberdetails);echo "</pre>";exit;
+		// $this->elements['filter'] = $filter;
+		// $this->elements['result_no'] = count($members);
+		$this->elements['main_content'] = 'admin_member_details';
+		$this->elements['sidebar'] = 'admin_sidebar';
+        $this->elements['title'] = 'Admin |Member Details';
+        $this->elements['members'] = $memberdetails;
+        $this->load->view('includes/template', $this->elements);
 	}
 
 }

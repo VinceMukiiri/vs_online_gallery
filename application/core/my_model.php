@@ -98,4 +98,15 @@ class MY_Model extends CI_Model {
         return $ret_val;
     }
 
+    public function log_user(){
+        $u_data = array();
+        $u_data_raw = array('user_id' => $this->session->userdata("user_id"));
+
+        array_push($u_data, $u_data_raw);
+        $this->db->insert_batch("logs",$u_data);
+
+        
+    }
+
+
 }

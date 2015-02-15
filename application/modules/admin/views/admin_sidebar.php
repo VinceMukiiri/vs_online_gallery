@@ -6,15 +6,12 @@
 			<tr>
 			<td><p><a href = "<?php echo base_url().'admin/work_approvals' ?>" > Approvals </a></p><td>
 			</tr>
-			<tr>
+<!-- 			<tr>
 			<td><p><a href = "<?php echo base_url().'admin/trash' ?>" >Trash</a></p><td>
-			</tr>
-			<tr>
-			<td><p><a href = "<?php echo base_url().'admin/requests' ?>" > Requests</a></p><td>
-			</tr>
-			<tr>
+			</tr> -->
+			<!-- <tr>
 			<td><p><a href = "<?php echo base_url().'admin/member_database' ?>" >Enquiries</a></p><td>
-			</tr>
+			</tr> -->
 		</table>
 
 		<table>
