@@ -7,10 +7,5 @@ application/cache/*
 application/logs/*
 !application/logs/index.html
 !application/logs/.htaccess
-<<<<<<< HEAD
 
-
-dbv/data/meta/revision
-=======
->>>>>>> 2ec5d35a61ae30db1bf2142a77a073015a75d2c7
 /nbproject/private/
