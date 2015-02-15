@@ -1,7 +1,7 @@
-Online Learning VJM
+Online Gallery VS
 ================================
 
-WebApp Project for Internet Technologies class done by Vince Mukiiri, Joel Kithinji and Mike Njuguna.
+WebApp Project for User Interface Design class done by Vince Mukiiri and Seth Karsan.
 
 Created from [VinceMukiiri's Website Template](https://github.com/VinceMukiiri/Website-Template-CI-Bootstrap-FA/) (Includes CodeIgniter, Bootstrap3, FontAwesome, JQuery, FirePHP, MyModel and sample controllers and views.)
 
