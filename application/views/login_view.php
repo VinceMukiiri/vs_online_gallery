@@ -65,7 +65,7 @@
                     'content' => 'Login',
                 ));
                 ?>
-                <a href="<?php echo site_url() ?>/login/registration" class="btn bg-info">Sign Up</a>
+                <a href="<?php echo site_url() ?>login/registration" class="btn bg-info">Sign Up</a>
             </div>
 
         </div><!-- login button -->

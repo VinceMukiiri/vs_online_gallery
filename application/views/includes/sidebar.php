@@ -2,6 +2,7 @@
 <?php 
 	$logged_in = $this->session->userdata('logged_in');
 	$user_type = $this->session->userdata('user_type');
+        $the_details = NULL;
 
 	$dates= date('F j,Y');
 
@@ -20,10 +21,11 @@
 	</tr>
 	</table>
 	</div>
-	<div id=\"info\">';
+	';
 
 	if (isset($logged_in)) {	
 		echo "
+                    <div id=\"info\">
 		<table>
 		<table class =\"infotable\">
 		<th>Your Information</th>
@@ -41,7 +43,8 @@
 		</tr>
 
 		</table>
-	</div>";
+                </div>
+	";
 		
 
 	if ($user_type == 1) {

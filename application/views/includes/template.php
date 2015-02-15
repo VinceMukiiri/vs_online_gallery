@@ -17,7 +17,9 @@ if ($main_content == 'login_view' || $main_content == 'registration_view') {
 if ($main_content == 'login_view' || $main_content == 'registration_view') {
     //don't load footer
 } else {
-     $this->load->view('includes/sidebar');
+    if($main_content == 'admin_home') {
+        $this->load->view('includes/sidebar');
+    }
 }
 
 echo '<div id="page-wrapper">';
@@ -35,7 +37,7 @@ echo '</div>'; //end page-wrapper
 if ($main_content == 'login_view' || $main_content == 'registration_view') {
     //don't load footer
 } else {
-     $this->load->view('includes/footer');
+    $this->load->view('includes/footer');
 }
 
 //end of document with javascript calls and </body> & </html> tag
