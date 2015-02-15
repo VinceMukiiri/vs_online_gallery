@@ -21,7 +21,7 @@ class Comment_Model extends MY_Model {
      * ID of the comment the comment was posted on
      * @var int
      */
-    public $content_id;
+    public $art_id;
 
     /**
      * The user who posted the comment
@@ -40,12 +40,12 @@ class Comment_Model extends MY_Model {
     }
 
 
-    public function get_by_content($content_id, $limit = 0, $offset = 0) {
+    public function get_by_art($art_id, $limit = 0, $offset = 0) {
         $this->db->order_by("date", "desc");
         if ($limit) {
-            $query = $this->db->get_where($this::DB_TABLE, array('content_id' => $content_id), $limit, $offset);
+            $query = $this->db->get_where($this::DB_TABLE, array('art_id' => $art_id), $limit, $offset);
         } else {
-            $query = $this->db->get_where($this::DB_TABLE, array('content_id' => $content_id));
+            $query = $this->db->get_where($this::DB_TABLE, array('art_id' => $art_id));
         }
         $ret_val = array();
         $class = get_class($this);
@@ -55,6 +55,13 @@ class Comment_Model extends MY_Model {
             $ret_val[$row->date] = $model;
         }
         return $ret_val;
+    }
+    
+    public function count_comments($art_id) {
+        $this->db->where('art_id', $art_id);
+        $this->db->from($this::DB_TABLE);
+        $comment_count = $this->db->count_all_results();
+        return $comment_count;
     }
 
 }

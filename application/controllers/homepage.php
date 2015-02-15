@@ -29,6 +29,17 @@ class Homepage extends CI_Controller {
         //these three lines are used to generate content by injecting the main content into the template view
         $this->elements['main_content'] = 'homepage_view';
         $this->elements['title'] = 'Home';
+
+        $this->load->model('art_model');
+        $temp_art = new Art_Model();
+        $arts = $temp_art->get();
+
+        $this->load->model('category_model');
+        $category = new Category_Model();
+        $categories = $category->get();
+        $this->elements['data']['categories'] = $categories;
+
+        $this->elements['data']['arts'] = $arts;
         $this->load->view('includes/template', $this->elements);
     }
 

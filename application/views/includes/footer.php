@@ -1,6 +1,5 @@
 <!-- Footer -->
 <div class="footer">
-    <div class="container">
         <div class="row">
             <div class="col-footer col-md-4 col-xs-6">
                 <h3>Navigate</h3>
@@ -35,7 +34,6 @@
                 <div class="footer-copyright">&copy; 2015 Vince Mukiiri & Seth Karsan</div>
             </div>
         </div>
-    </div>
 </div>
 
 

@@ -9,6 +9,12 @@ class User_Model extends MY_Model {
      * @var int 
      */
     public $user_id;
+
+    /**
+     * User unique identifier
+     * @var int 
+     */
+    public $user_type;
     
     /**
      * Username (used in login)
@@ -50,6 +56,6 @@ class User_Model extends MY_Model {
         parent::__construct();
         
     }
-    
+ 
 }
 

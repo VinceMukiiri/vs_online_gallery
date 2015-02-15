@@ -18,46 +18,52 @@ class Upload extends CI_Controller {
     }
 
     function index() {
-        $this->elements['main_content'] = 'upload/upload_view';
+        $this->elements['main_content'] = 'upload_view';
         $this->elements['title'] = 'Upload';
         $this->load->view('includes/template', $this->elements);
     }
 
     function do_upload() {
-        $config['upload_path'] = './site_data/content/';
-        $config['allowed_types'] = 'pdf';
+        $config['upload_path'] = './artwork/';
+        $config['allowed_types'] = 'jpg|';
         $config['max_size'] = '10000';
 
         $this->load->library('upload', $config);
 
 
         if (!$this->upload->do_upload('content_file')) {
-            $this->elements['main_content'] = 'upload/upload_view';
+            $this->elements['main_content'] = 'upload_view';
             $this->elements['data']['error'] = $this->upload->display_errors();
 
             $this->load->view('includes/template', $this->elements);
         } else {
-            $this->elements['main_content'] = 'upload/upload_details_view';
-            $this->elements['data']['upload_data'] = $this->upload->data();
+            $this->load->model('category_model');
 
+            $category = new Category_Model();
+            $categories = $category->get();
+            
+            $this->elements['main_content'] = 'upload_details_view';
+            $this->elements['data']['upload_data'] = $this->upload->data();
+            $this->elements['data']['categories'] = $categories;
             $this->load->view('includes/template', $this->elements);
         }
     }
 
     function upload_details() {
-        $this->load->model('content_model');
+        $this->load->model('art_model');
 
-        $content = new Content_model();
+        $art = new Art_model();
 
-        $content->title = $this->input->post('title');
-        $content->description = $this->input->post('description');
-        $content->file_name = $this->input->post('file_name');
-        $content->file_type = $this->input->post('file_ext');
-        $content->uploader_user_id = $this->session->userdata('user_id');
-        $content->upload_date = time();
-        
-        $content->save();
-        
+        $art->title = $this->input->post('title');
+        $art->description = $this->input->post('description');
+        $art->file_name = $this->input->post('file_name');
+        $art->file_type = $this->input->post('file_ext');
+        $art->category_id = $this->input->post('category');
+        $art->uploader_user_id = $this->session->userdata('user_id');
+        $art->upload_date = time();
+
+        $art->save();
+
         redirect('/homepage');
     }
 

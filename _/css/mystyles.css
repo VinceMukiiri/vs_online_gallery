@@ -8,20 +8,25 @@ body {
 
 h1 {
     font-family: Oswald;
+    font-size: 32px;
 }
 
-.registration {
+.my-panel {
     margin: 20px auto;
 }
 
-.registration .panel-heading .panel-title {
+.my-panel .panel-heading .panel-title {
     font-size: 36px;
     text-align: center;
     color: #d9c179;
 }
 
-.registration .panel-heading {
+.my-panel .panel-heading {
     background: #402401;
+}
+
+a:hover {
+    color: #a95f03 !important;
 }
 
 
@@ -55,12 +60,14 @@ h1 {
 }
 
 .mainmenu ul li a,
-.mainmenu .mainmenu-submenu-inner li a {
+.mainmenu .mainmenu-submenu-inner li a,
+.dropdown-menu li a
+{
     color: #d9c179;
 }
 
 .mainmenu ul li.active a, 
-.mainmenu .mainmenu-submenu-inner li.active a 
+.mainmenu .mainmenu-submenu-inner li.active a
 {
     background-color: #d9c179;
     color: #402401;
@@ -71,17 +78,12 @@ h1 {
     padding-right: 100px;
 }
 
-.logo-wrapper {
-    padding-top: 10px;
-    padding-bottom: 10px;
-}
 
-.logo-wrapper img {
-    width: 320px;
-}
+
+
 
 li.mainmenu-open a {
-    
+
     color: #d9c179 !important;
 }
 
@@ -95,17 +97,19 @@ li.mainmenu-open a {
 
 }
 
-.mainmenu-submenu-inner div ul li:hover {
+.mainmenu-submenu-inner div ul li:hover,
+.dropdown-menu li:hover
+{
     background: #d9c179;
 }
 
-.mainmenu-submenu-inner div ul li:hover a{
+.mainmenu-submenu-inner div ul li:hover a,
+.dropdown-menu li:hover a
+{
     text-decoration: none;
     color: #402401 !important;
     background: #d9c179;
 }
-
-
 
 .mainmenu-submenu ul {
     margin-left: 0px;
@@ -119,24 +123,58 @@ li.mainmenu-open a {
     padding-bottom: 10px;
 }
 
+#login_form {
+    width:35em;
+    margin:10px auto 0
+}
+
+.logo-wrapper,
+.logo-wrapper-dark
+{
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+}
+
+
+.logo-wrapper-dark a img {
+    display: block;
+    width: 320px;
+    margin: 0px auto;
+}
+
+.section .container:first-child h1 {
+    font-size: 32px;
+}
+
 /*-------------------------------------------------------------------
    HOMEPAGE STYLES
 ------------------------------------------------------------------------*/
-.art-box {
+.art-box-qtr {
 
     width: 24%;
     float: left;
 }
 
+.art-box-thrd {
 
-.art-wrapper .artist {
-    font-size: .9em;
+    width: 32%;
+    float: left;
 }
 
 
+.art-wrapper .artist,
+.art-wrapper .category {
+    font-size: .9em;
+}
+
+.art-wrapper .category {
+    text-align: right;
+}
+
 .art-wrapper .art-stats {
     font-size: .8em;
-    text-align: right;
+    text-align: center;
 }
 
 .art-wrapper .art-thumb {
@@ -166,11 +204,23 @@ li.mainmenu-open a {
     margin-right: 5px;
 }
 
+.btn:hover {
+    background: #402401;
+}
 
 
 
-
-#login_form{width:35em;margin:50px auto 0}.member .fa{display:none}.member:hover .fa{color:#B0BECC;display:block}.member:hover .fa:hover{color:gray;cursor:pointer}
+.member .fa {
+    display:none
+}
+.member:hover .fa {
+    color:#B0BECC;
+    display:block
+}
+.member:hover .fa:hover {
+    color:gray;
+    cursor:pointer
+}
 
 a.thumbnail {
     text-decoration: none;
@@ -178,4 +228,99 @@ a.thumbnail {
 
 .container.fullpage {
     min-height: 768px;
+}
+
+.infotable{
+    float: left;
+    color:grey;
+    clear:right;
+    border:1.5px solid #000000;
+    margin:10px 0 10px 0;
+    font-family:Helvetica;
+    width:91%;
+}
+
+.floats{
+    float: left;
+    border:1.5px solid #ECEBEE;
+    margin:2px;
+}
+
+#ppic img{
+    height:200px;
+    width:250px;
+    float:left;
+    margin:10px 0px;
+    float:left;
+    margin:0 30px;
+}
+
+.width-auto{
+    width: auto;
+}
+
+.black{
+    color: black;
+    border-color: black!important;
+}
+
+/*-------------------------------------------------------------------
+   VIEW ART STYLES
+------------------------------------------------------------------------*/
+
+.padded-btn {
+    margin: 5px;
+}
+
+.form-margin {
+    margin-top: 20px;
+}
+
+/*-------------------------------------------------------------------
+   EXPLORE STYLES
+------------------------------------------------------------------------*/
+
+.side-nav {
+    padding-top: 20px;
+
+}
+
+.side-nav ul {
+    font-family: Oswald;
+    font-size: 24px;
+    list-style-type: none;
+    padding: 5px 10px 5px 10px
+
+}
+
+.side-nav a {
+
+    text-decoration: none;
+}
+
+.side-nav li {
+    padding: 5px 10px 5px 5px;
+}
+
+
+
+
+.side-nav li.active {
+   
+    background: #a95f03;
+    padding: 10px 0px 10px 5px;
+}
+
+.side-nav li.active a { 
+     color: #e6d08f !important;
+}
+
+.side-nav li:hover {
+   
+    background: #a95f03;
+    padding: 10px 10px 10px 20px;
+}
+
+.side-nav li:hover a { 
+     color: #e6d08f !important;
 }
