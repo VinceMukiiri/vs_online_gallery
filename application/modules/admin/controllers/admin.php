@@ -72,9 +72,9 @@ class Admin extends MY_Controller{
 		$result = m_admin::approval_status($art_id,$alteration);
 
 		if ($alteration == "1") {
-		redirect(base_url().'admin/work_approvals/1');
-		}else{
 		redirect(base_url().'admin/work_approvals/2');
+		}else{
+		redirect(base_url().'admin/work_approvals/1');
 		}
 	}
 

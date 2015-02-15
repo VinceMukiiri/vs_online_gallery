@@ -53,7 +53,9 @@ class M_Admin extends MY_Model{
 		if(isset($selection)):
 			if($selection == 1):
 				$tuner = "AND a.status = 1";
-			else:
+			elseif($selection == 3):
+				$tuner = "AND a.status = 2";
+			elseif($selection == 2):
 				$tuner = "AND a.status = 0";
 			endif;
 		else:
@@ -95,7 +97,9 @@ class M_Admin extends MY_Model{
 			if($alteration == 1):
 				$tuner = "1";
 			elseif($alteration == 2):
-				$tuner = "0";
+				$tuner = "0";//unnaproved
+			elseif($alteration == 3):
+				$tuner = "2";//trash
 			endif;
 		else:
 			$tuner = "`active` + 0";

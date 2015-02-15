@@ -23,7 +23,7 @@
 				</tr>
 
 				<tr>
-				 <td><p>Upload a <a href = "<?php echo base_url().'admin/file_upload' ?>">file.</a></p></td>
+				 <td><p>Upload a <a href = "<?php echo base_url().'upload' ?>">file.</a></p></td>
 				</tr>
 				<tr>
 				<td><p>View your <a href = "<?php echo base_url().'admin/member_uploads' ?>"> Uploads.</a></p><td>
