@@ -120,5 +120,4 @@ class Login extends MY_Controller {
 //        $this->session->set_userdata('logged_in', false);
 //        redirect('/homepage');
 //    }
-
 }

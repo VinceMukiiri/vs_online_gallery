@@ -57,6 +57,25 @@
 
                 <div class="form-group">
                     <?php
+                    echo form_label('Password Confirm: ', 'passconf', array(
+                        'class' => 'col-sm-4 control-label'
+                    ));
+                    ?>
+                    <div class="col-sm-6">
+                        <?php
+                        //password input
+                        echo form_password(array(
+                            'name' => 'passconf',
+                            'id' => 'passconf',
+                            'class' => 'col-sm-6 form-control',
+                            'value' => '',
+                        ));
+                        ?>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <?php
                     echo form_label('Frist Name: ', 'firstname', array(
                         'class' => 'col-sm-4 control-label'
                     ));
@@ -68,7 +87,7 @@
                             'name' => 'firstname',
                             'id' => 'firstname',
                             'class' => 'col-sm-6 form-control',
-                            'value' => '',
+                            'value' => set_value('firstname'),
                         ));
                         ?>
                     </div>
@@ -88,7 +107,7 @@
                             'name' => 'secondname',
                             'id' => 'secondname',
                             'class' => 'col-sm-6 form-control',
-                            'value' => '',
+                            'value' => set_value('secondname'),
                         ));
                         ?>
                     </div>
@@ -107,7 +126,7 @@
                             'name' => 'email',
                             'id' => 'email',
                             'class' => 'col-sm-6 form-control',
-                            'value' => '',
+                            'value' => set_value('email'),
                         ));
                         ?>
                     </div>
