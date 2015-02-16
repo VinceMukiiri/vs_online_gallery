@@ -56,6 +56,6 @@ class User_Model extends MY_Model {
         parent::__construct();
         
     }
-    
+ 
 }
 

@@ -1707,7 +1707,7 @@ span.color-red {
   color: #A0A0A0;
   padding: 0 20px 10px 20px;
   border-top: 4px solid #a95f03;
-  margin-top: 20px;
+  margin-top: 70%;
   -webkit-box-shadow: 0 -1px 12px rgba(0,0,0,0.4);
   -moz-box-shadow: 0 -1px 12px rgba(0,0,0,0.4);
   box-shadow: 0 -1px 12px rgba(0,0,0,0.4);
@@ -2666,4 +2666,9 @@ span.color-red {
 }
 .dropdown.open a.dropdown-toggle .caret {
   border-top: 4px solid #FFF;
+}
+
+.scaled_img img{
+  max-height: 200px!important;
+  max-width: 200px!important;
 }

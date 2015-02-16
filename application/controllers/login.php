@@ -63,6 +63,7 @@ class Login extends MY_Controller {
                 'user_type' => $user->user_type
             ));
 //redirect to member homepage
+        $user->log_user();
             redirect('/homepage');
         } else {
             $this->err = TRUE;
