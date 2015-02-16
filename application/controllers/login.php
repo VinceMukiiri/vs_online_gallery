@@ -72,33 +72,44 @@ class Login extends MY_Controller {
 
     function registration() {
         if ($this->input->post('submit')) {
-            $config['upload_path'] = './site_data/profile_pictures/users/';
-            $config['allowed_types'] = 'gif|jpg|png';
-            $config['max_size'] = '10000';
-            $config['max_width'] = '1024';
-            $config['max_height'] = '768';
 
-            $this->load->library('upload', $config);
+            $this->load->library('form_validation');
+            $this->form_validation->set_rules('username', 'Username', 'trim|required|min_length[5]|max_length[12]|xss_clean');
+            $this->form_validation->set_rules('password', 'Password', 'trim|required|matches[passconf]|md5');
+            $this->form_validation->set_rules('passconf', 'Password Confirmation', 'trim|required');
+            $this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email');
 
-            if (!$this->upload->do_upload('photo')) {
-                $this->elements['data']['error'] = $this->upload->display_errors();
+            if ($this->form_validation->run() == FALSE) {
+                echo 'formvalidation returns false';
             } else {
-                $upload_data = $this->upload->data();
-                $this->elements['data']['upload_data'] = $upload_data;
+                $config['upload_path'] = './site_data/profile_pictures/users/';
+                $config['allowed_types'] = 'gif|jpg|png';
+                $config['max_size'] = '10000';
+                $config['max_width'] = '1024';
+                $config['max_height'] = '768';
+
+                $this->load->library('upload', $config);
+
+                if (!$this->upload->do_upload('photo')) {
+                    $this->elements['data']['error'] = $this->upload->display_errors();
+                } else {
+                    $upload_data = $this->upload->data();
+                    $this->elements['data']['upload_data'] = $upload_data;
+                }
+
+                $this->load->model('user_model');
+                $new_user = new User_Model;
+
+                $new_user->username = $this->input->post('username');
+                $new_user->hashed_password = md5($this->input->post('password'));
+                $new_user->first_name = $this->input->post('firstname');
+                $new_user->second_name = $this->input->post('secondname');
+                $new_user->profile_picture = $upload_data['file_name'];
+                $new_user->email = $this->input->post('email');
+
+                $new_user->save();
+                redirect('login');
             }
-
-            $this->load->model('user_model');
-            $new_user = new User_Model;
-
-            $new_user->username = $this->input->post('username');
-            $new_user->hashed_password = md5($this->input->post('password'));
-            $new_user->first_name = $this->input->post('firstname');
-            $new_user->second_name = $this->input->post('secondname');
-            $new_user->profile_picture = $upload_data['file_name'];
-            $new_user->email = $this->input->post('email');
-
-            $new_user->save();
-            redirect('login');
         }
 
         $this->elements['main_content'] = 'registration_view';

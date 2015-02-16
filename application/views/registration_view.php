@@ -30,7 +30,7 @@
                             'name' => 'username',
                             'id' => 'username',
                             'class' => 'col-sm-6 form-control',
-                            'value' => '',
+                            'value' => set_value('username'),
                         ));
                         ?>
                     </div>
